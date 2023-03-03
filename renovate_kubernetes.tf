@@ -38,7 +38,7 @@ resource "kubernetes_secret" "renovate-env" {
     NPM_REGISTRY_NPMJS_ORG_TOKEN = var.npm_registry_npmjs_org_token
     RENOVATE_TOKEN = var.renovate_github_token
     GITHUB_COM_TOKEN = var.renovate_github_token
-    RENOVATE_GIT_PRIVATE_KEY = "'var.renovate_private_key'"
+    RENOVATE_GIT_PRIVATE_KEY = var.renovate_private_key
   }
   type = "Opaque"
 }
