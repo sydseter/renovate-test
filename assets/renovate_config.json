@@ -1,0 +1,23 @@
+{
+    "minor":{
+        "dependencyDashboardApproval":"true"
+    },
+    "major":{
+        "dependencyDashboardApproval":"true"
+    },
+    "dependencyDashboardApproval":"true",
+    "enabledManagers":[
+        "dockerfile",
+        "npm",
+        "nuget",
+        "homebrew",
+        "terraform",
+        "swift", 
+        "github-actions"
+    ],
+    "gitAuthor":"ac-github-machine-account",
+    "authType":"Token-Only",
+    "osvVulnerabilityAlerts":"true",
+    "autodiscover":"true",
+    "autodiscoverFilter": ["AdmincontrolAS/unicorn"]
+}
