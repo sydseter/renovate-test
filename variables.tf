@@ -9,10 +9,6 @@ variable "subscription_id" {
   description = "azure subscription id"
 }
 
-variable "renovate_git_author" {
-  type = string
-}
-
 variable "renovate_autodiscover" {
   type = string
 }

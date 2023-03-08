@@ -15,7 +15,7 @@
         "swift", 
         "github-actions"
     ],
-    "gitAuthor":"ac-github-machine-account",
+    "gitAuthor":"Renovate Bot <svc_gitadmin@visma.com>",
     "authType":"Token-Only",
     "osvVulnerabilityAlerts":"true",
     "autodiscover":"true",

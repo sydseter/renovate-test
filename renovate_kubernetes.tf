@@ -78,7 +78,7 @@ resource "kubernetes_cron_job_v1" "renovate" {
           spec {
             restart_policy = "Never"
             container {
-              image = "renovate/renovate:34.150.0"
+              image = "renovate/renovate:34.154.2"
               name  = "renovate"
               resources {
                 limits = {
@@ -100,8 +100,12 @@ resource "kubernetes_cron_job_v1" "renovate" {
                 value = "debug"
               }
               env {
-                name = "RENOVATE_GIT_AUTHOR"
-                value = var.renovate_git_author
+                name = "GIT_PRIVATE_KEY"
+                value = var.renovate_private_key
+              }
+              env {
+                name = "RENOVATE_NPM_REGISTRY_ORG_TOKEN"
+                value = var.npm_registry_npmjs_org_token
               }
               env {
                 name = "RENOVATE_AUTODISCOVER"
@@ -110,6 +114,14 @@ resource "kubernetes_cron_job_v1" "renovate" {
               env {
                 name = "RENOVATE_PLATFORM"
                 value = "github"
+              }
+              env {
+                name = "RENOVATE_CONFIG_FILE"
+                value = "/opt/renovate/config.json"
+              }
+              env {
+                name = "RENOVATE_BASE_DIR"
+                value = "/tmp/renovate/"
               }
               volume_mount {
                 name = "work-volume"
